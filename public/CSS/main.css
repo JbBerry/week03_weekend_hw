@@ -1,9 +1,8 @@
-.thumbnail {
-  vertical-align:middle;
-  transition: transform .2s;
-  height: 100px;
-  margin: 0 auto;
-}
-.thumbnail:hover {
-  transform: scale(2.0);
+#country-information{
+  height: 750px;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode: color;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }

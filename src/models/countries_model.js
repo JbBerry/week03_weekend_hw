@@ -9,9 +9,7 @@ class CountriesModel {
 
 
   getData() {
-    // get the countries data
     const url = `https://restcountries.eu/rest/v2/all`;
-    // an array of objects for each country
     const requestHelper = new RequestHelper(url);
     requestHelper.get()
       .then((data)=>{
@@ -26,20 +24,18 @@ class CountriesModel {
 
   getCountriesList() {
     const countryList = this.data.map(function(country){
-          return country.name
-        });
-      //console.log(typeof(countryList));
-      //console.log(countryList);
-      PubSub.publish('All-Countries', countryList);
+      return country.name
+    });
+    PubSub.publish('All-Countries', countryList);
   };
 
-  getCountryInformation(){
-    PubSub.subscribe('Chosen-Country', (event) => {
-    const countryIndex = event.detail;
-    const countryInformation = this.data[countryIndex];
-    PubSub.publish('Chosen-Country-Information', countryInformation);
-    });
-  };
+  // getCountryInformation(){
+  //   PubSub.subscribe('Chosen-Country', (event) => {
+  //   const countryIndex = event.detail;
+  //   const countryInformation = this.data[countryIndex];
+  //   PubSub.publish('Chosen-Country-Information', countryInformation);
+  //   });
+  // };
 }
 
 module.exports = CountriesModel;
