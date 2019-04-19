@@ -1,0 +1,9 @@
+.thumbnail {
+  vertical-align:middle;
+  transition: transform .2s;
+  height: 100px;
+  margin: 0 auto;
+}
+.thumbnail:hover {
+  transform: scale(2.0);
+}
