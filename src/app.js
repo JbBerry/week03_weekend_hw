@@ -12,4 +12,5 @@ document.addEventListener('DOMContentLoaded', () => {
   const countriesModel = new CountriesModel();
   countriesModel.getData();
   countriesModel.getCountryInformation();
+  countriesModel.getAdjacentCountryNames();
 });

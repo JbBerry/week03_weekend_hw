@@ -5,8 +5,7 @@ class CountriesModel {
 
   constructor() {
     this.data = [];
-  }
-
+  };
 
   getData() {
     const url = `https://restcountries.eu/rest/v2/all`;
@@ -29,13 +28,30 @@ class CountriesModel {
     PubSub.publish('All-Countries', countryList);
   };
 
-  // getCountryInformation(){
-  //   PubSub.subscribe('Chosen-Country', (event) => {
-  //   const countryIndex = event.detail;
-  //   const countryInformation = this.data[countryIndex];
-  //   PubSub.publish('Chosen-Country-Information', countryInformation);
-  //   });
-  // };
+  getCountryInformation(){
+    PubSub.subscribe('Chosen-Country', (event) => {
+    const countryIndex = event.detail;
+    const countryInformation = this.data[countryIndex];
+    PubSub.publish('Chosen-Country-Information', countryInformation);
+    });
+  };
+
+  getAdjacentCountryNames(){
+    PubSub.subscribe('Chosen-Country-Information', (event) => {
+      const chosenCountryInfo = event.detail;
+      const adjacentCountryList = [];
+      chosenCountryInfo.borders.forEach((border)=>{
+        this.data.forEach((country,index)=>{
+          if (this.data[index].cioc === border){
+            adjacentCountryList.push(this.data[index].name);
+          }
+        });
+      });
+      //console.log(countryList);
+      PubSub.publish('Chosen-Country-Adjacent-List', adjacentCountryList);
+    });
+  };
+
 }
 
 module.exports = CountriesModel;

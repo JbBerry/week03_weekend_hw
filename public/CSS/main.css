@@ -6,3 +6,21 @@
   background-size: contain;
   background-position: center;
 }
+
+table.countryBody {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  border: 1px solid #000000;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.countryBody td, table.countryBody th {
+  border: 1px solid #000000;
+  padding: 3px 3px;
+}
+table.countryBody tbody td {
+  font-size: 13px;
+}
+table.countryBody tfoot td {
+  font-size: 14px;
+}
