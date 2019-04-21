@@ -1,3 +1,16 @@
+h1{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 30px;
+}
+select {
+  position: relative;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  background-image: linear-gradient(to right, rgba(213, 234, 246,1), rgba(213, 234, 246,0)70%);
+  outline: none;
+  font-size: 100%;
+  margin: 11px;
+}
+
 #country-body {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   /* border: 1px solid #000000; */
@@ -7,7 +20,6 @@
 }
 
 #country-information{
-  height: 400px;
   text-align: left;
   vertical-align: top;
   background-color: rgba(255, 255, 255, 0.8);
@@ -25,9 +37,10 @@
 
 .head{
   justify-content: left;
-  background-image: linear-gradient(to right, rgba(179, 230, 255,1), rgba(179, 230, 255,0)70%);
+  background-image: linear-gradient(to right, rgba(213, 234, 246,1), rgba(213, 234, 246,0)70%);
   border: 1px solid #dddddd;
   border-right: 0px;
+  font-size: 20px;
 }
 
 .capital {
@@ -41,7 +54,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 15px;
   background-color: rgba(255, 255, 255, 0.8);
   background-blend-mode: color;
   background-repeat: no-repeat;
