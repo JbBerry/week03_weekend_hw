@@ -43,12 +43,26 @@ class CountriesModel {
       chosenCountryInfo.borders.forEach((border)=>{
         this.data.forEach((country,index)=>{
           if (this.data[index].cioc === border){
-            adjacentCountryList.push(this.data[index].name);
+            adjacentCountryList.push(this.data[index]);
           }
         });
       });
       //console.log(countryList);
       PubSub.publish('Chosen-Country-Adjacent-List', adjacentCountryList);
+    });
+  };
+
+  getCountryByName(){
+    PubSub.subscribe('Country-Name', (event) => {
+    const countryName = event.detail;
+    let countryInformation = {};
+    this.data.forEach((country,index)=>{
+      if (this.data[index].name === countryName){
+        countryInformation = this.data[index]
+        return;
+      };
+    });
+    PubSub.publish('Chosen-Country-Information', countryInformation);
     });
   };
 

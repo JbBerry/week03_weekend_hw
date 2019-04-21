@@ -1,5 +1,47 @@
+#country-body {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  /* border: 1px solid #000000; */
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
 #country-information{
-  height: 750px;
+  height: 400px;
+  text-align: left;
+  vertical-align: top;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode: color;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+}
+
+#adjacent-country{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.head{
+  justify-content: left;
+  background-image: linear-gradient(to right, rgba(179, 230, 255,1), rgba(179, 230, 255,0)70%);
+  border: 1px solid #dddddd;
+  border-right: 0px;
+}
+
+.capital {
+   text-transform: capitalize;
+ }
+
+.flex-tile {
+  width: 300px;
+  height: 150px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   background-blend-mode: color;
   background-repeat: no-repeat;
@@ -7,20 +49,5 @@
   background-position: center;
 }
 
-table.countryBody {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  border: 1px solid #000000;
-  width: 100%;
-  text-align: left;
-  border-collapse: collapse;
-}
-table.countryBody td, table.countryBody th {
-  border: 1px solid #000000;
-  padding: 3px 3px;
-}
-table.countryBody tbody td {
-  font-size: 13px;
-}
-table.countryBody tfoot td {
-  font-size: 14px;
-}
+.flex-tile:hover {
+  background-color: rgba(255, 255, 255, 0.5);
