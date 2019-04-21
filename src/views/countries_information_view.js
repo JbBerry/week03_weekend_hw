@@ -6,11 +6,13 @@ class CountriesInfoView {
     this.countryInfoContainer = document.querySelector('#country-information');
     this.adjacentCountryHead = document.querySelector('#adjacent-country-head')
     this.adjacentCountryContainer = document.querySelector('#adjacent-country')
+    this.countryName = document.querySelector('#country-name')
   };
 
   bindEvents() {
     PubSub.subscribe('Chosen-Country-Information', (event) => {
       const countryInformation = event.detail;
+      this.renderName(countryInformation);
       this.renderFlag(countryInformation)
       this.renderInformation(countryInformation);
     });
@@ -20,6 +22,21 @@ class CountriesInfoView {
       this.renderAdjacent(adjacentCountryList);
     });
   }
+
+  renderName(countryInformation){
+    const name = countryInformation.name;
+    console.log(`need to find ${name} in dropdown`);
+    const countryList = [];
+    for (let i  = 0; i < this.countryName.options.length; i++)
+    {
+     countryList.push(this.countryName.options[i].textContent);
+    };
+    countryList.forEach((country,index)=>{
+      if (country === name){
+        this.countryName.options[index].selected = true;
+      };
+    });
+  };
 
   renderFlag(countryInformation){
     const flag = countryInformation.flag;
